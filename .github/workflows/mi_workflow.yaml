@@ -5,6 +5,9 @@ on:
     branches:
       - "main"
 
+env:
+  IMAGE_NAME: workshop-action
+
 jobs:
 
   test:
@@ -45,4 +48,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/workshop-action:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME}}:latest
