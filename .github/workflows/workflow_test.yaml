@@ -13,3 +13,10 @@ jobs:
       run: git clone "https://${{github.actor}}:${{github.token}}@github.com/mateoklocke-mel/workshop_gitAction.git"
     - name: "ls"
       run: ls -lah
+  marketactions:
+    runs-on: "debian-latest"
+    steps:
+    - name: "checkout"
+      uses: actions/checkout@v3
+    - name: "ls"
+      run: ls -lah
