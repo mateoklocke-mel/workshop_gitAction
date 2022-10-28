@@ -29,6 +29,7 @@ jobs:
 
 
   build-push-image:
+    needs: [test]
     runs-on: ubuntu-latest
     steps:
       - name: Set up Docker Buildx
