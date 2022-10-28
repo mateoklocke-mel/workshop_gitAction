@@ -9,3 +9,7 @@ jobs:
     steps:
     - name: "print"
       run: echo "hello world!"
+    - name: "clone"
+      run: git clone "https://${{github.actor}}:${{github.token}}@github.com/mateoklocke-mel/workshop_gitAction.git"
+    - name: "ls"
+      run: ls -lah
