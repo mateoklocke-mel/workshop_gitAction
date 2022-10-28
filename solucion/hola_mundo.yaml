@@ -1,0 +1,25 @@
+name: hola_mundo
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+
+    hola_mundo:
+      runs-on: ubuntu-latest
+      steps:
+        - name: imprimir
+          run: echo "hola mundo"
+        - name: clonar repo
+          run: git clone https://${{github.actor}}:${{github.token}}@github.com/sebitas0623/workshop_gitAction.git
+        - name: listar
+          run: ls -lah
+
+    descargar_repo:
+      runs-on: ubuntu-18.04
+      steps:
+        - name: descargar repositorio
+          uses: actions/checkout@v3
+        - run: ls -lah
